@@ -4,23 +4,38 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles.css" />
-    <hr />
 
-    <title>Car Diffrentiater</title>
+    <script src="script.js"></script>
+    <title>Car Differentiator</title>
   </head>
   <body>
     <h1>Turner Cars</h1>
     <h2>Get the best deals</h2>
+    <br />
     <div class="container">
-      <label for="formFile">Select car that resemble your vehicle</label>
+      <label for="inputType">Select input type:</label>
+      <select id="inputType" onchange="toggleInputType()">
+        <option value="file">File</option>
+        <option value="url">URL</option>
+      </select>
+    </div>
+    <div class="container" id="fileContainer">
+      <label for="formFile">Select a car image from your device:</label>
+      <hr />
       <input type="file" id="formFile" />
     </div>
+    <div class="container" id="urlContainer" style="display: none">
+      <label for="imageUrl">Enter the URL of a car image:</label>
+      <hr />
+      <input type="url" id="imageUrl" />
+    </div>
     <div class="container">
-      <button onclick="analyzeCar()">Submit</button>
+      <button onclick="analyzeCar()">
+        Yes, this is what my car looks like
+      </button>
     </div>
 
     <div id="output" class="container"></div>
     <hr />
-    <script src="script.js"></script>
   </body>
 </html>
